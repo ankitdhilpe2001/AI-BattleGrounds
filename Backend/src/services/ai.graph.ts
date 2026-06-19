@@ -90,6 +90,10 @@ const solutionNode: GraphNode<typeof State> = async (state) => {
 
   const lastMessage = state.messages[state.messages.length - 1];
 
+  if (!lastMessage) {
+    throw new Error("No messages available to generate a solution.");
+  }
+
   const userMessage =
     typeof lastMessage.content === "string"
       ? lastMessage.content
