@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: [process.env.FRONTEND_ORIGIN || "http://localhost:5173", "http://127.0.0.1:5173"],
+  origin: [process.env.FRONTEND_ORIGIN || "http://127.0.0.1:5173"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
